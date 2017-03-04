@@ -2,7 +2,5 @@ language: java
 jdk:
   - oraclejdk8
 after_success:
- - git fetch
- - git checkout release
- - git merge dev
- - git push
+ - git checkout -b release
+ - git push -u origin release
