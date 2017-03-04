@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>IyzicoTicket</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+<div th:replace="../fragments/header :: header">&nbsp;</div>
+<br/>
+<br/>
+<br/>
+    <p>
+        IyzicoTicket is an event management system.
+         <p th:text="'Developed by ' + ${name} + '.'"/>
+    </p>
+</body>
+</html>
