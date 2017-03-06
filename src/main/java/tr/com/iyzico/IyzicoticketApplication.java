@@ -23,7 +23,9 @@ public class IyzicoticketApplication {
 	public DataSource testDataSource(){
 		return new EmbeddedDatabaseBuilder()
 				.setType(EmbeddedDatabaseType.HSQL)
-				.addScript("test-db-ddl.sql")
+				.addScript("db/test-db-ddl.sql")
+				.addScript("db/event-insert.sql")
+				.addScript("db/session-insert.sql")
 				.build();
 	}
 }

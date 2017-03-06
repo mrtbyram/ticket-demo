@@ -1,4 +1,4 @@
-package tr.com.iyzico.controller;
+package tr.com.iyzico.web.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
