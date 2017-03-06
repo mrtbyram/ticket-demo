@@ -15,4 +15,9 @@ public class IndexController {
         model.addAttribute("name", "ThymeLeaf");
         return "index";
     }
+
+    @RequestMapping("/events")
+    public String events(Model model){
+        return "events";
+    }
 }

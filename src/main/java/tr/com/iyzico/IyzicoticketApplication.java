@@ -12,5 +12,4 @@ public class IyzicoticketApplication {
 		SpringApplication.run(IyzicoticketApplication.class, args);
 	}
 
-
 }
