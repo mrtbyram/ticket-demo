@@ -1,8 +1,13 @@
-package tr.com.iyzico.web.controller;
+package tr.com.iyzico.web;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import tr.com.iyzico.repo.EventRepository;
+import tr.com.iyzico.repo.model.Event;
+
+import java.util.List;
 
 /**
  * Created by muratbayram on 04/03/2017.
@@ -10,14 +15,20 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class IndexController {
 
+    @Autowired
+    EventRepository eventRepo;
+
     @RequestMapping("/")
     public String index(Model model){
-        model.addAttribute("name", "ThymeLeaf");
         return "index";
     }
 
     @RequestMapping("/events")
     public String events(Model model){
+        List<Event> events = eventRepo.findAll();
+
+        model.addAttribute("events", events);
+
         return "events";
     }
 }

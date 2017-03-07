@@ -1,11 +1,11 @@
 CREATE TABLE event (
   id INTEGER PRIMARY KEY,
   name VARCHAR(100) NULL,
-  subject VARCHAR(1000) NULL,
+  description VARCHAR(1000) NULL,
   place VARCHAR(100) NULL,
   date DATE NULL);
 
-CREATE TABLE session (
+CREATE TABLE talk (
   id INTEGER PRIMARY KEY,
   event_id INTEGER NOT NULL,
   speaker VARCHAR(45) NULL,
