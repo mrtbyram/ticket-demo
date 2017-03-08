@@ -10,7 +10,9 @@
 <div th:replace="../fragments/header :: header">&nbsp;</div>
 <br/><br/><br/><br/>
 <div class="container">
-    <table class="table table-bordered table-striped">
+    <h1 class="display-3">Events</h1>
+    <br/>
+    <table class="table table-striped">
         <thead>
         <tr>
             <td>Name</td>
@@ -24,11 +26,11 @@
             <td colspan="4">No Events</td>
         </tr>
         <tr th:each="event : ${events}">
-            <td th:text="${event.name}"></td>
-            <td th:text="${event.description}"></td>
-            <td th:text="${event.place}"></td>
-            <td th:text="${event.date}"></td>
-            <!--<td><a href="view.html" th:href="@{'/' + ${task.id}}" th:text="${task.title}">Title ...</a></td>-->
+            <td th:text="${event.name}"/>
+            <td th:text="${event.description}"/>
+            <td th:text="${event.place}"/>
+            <td th:text="${#dates.format(event.date, 'dd/MM/yyyy')}"/>
+            <td><a class="btn btn-primary btn-sm" role="button" href="#" th:href="@{'/event/' + ${event.id}}">Details</a></td>
         </tr>
         </tbody>
     </table>

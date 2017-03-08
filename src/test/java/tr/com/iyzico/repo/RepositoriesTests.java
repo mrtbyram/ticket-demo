@@ -3,9 +3,10 @@ package tr.com.iyzico.repo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import tr.com.iyzico.IyzicoticketApplication;
 import tr.com.iyzico.repo.model.Event;
 
 import java.util.ArrayList;
@@ -14,8 +15,8 @@ import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@RunWith(SpringJUnit4ClassRunner.class)
+@Import(IyzicoticketApplication.class)
 @ActiveProfiles("test")
 public class RepositoriesTests {
 
