@@ -52,7 +52,7 @@ public class ViewControllersTests {
 
 	@Test
 	public void event_should_return_eventdetail() throws Exception {
-		mockMvc.perform(get("/event/123"))
+		mockMvc.perform(get("/event/1"))
 				.andExpect(status().isOk())
 				.andExpect(view().name("event-detail"));
 	}
