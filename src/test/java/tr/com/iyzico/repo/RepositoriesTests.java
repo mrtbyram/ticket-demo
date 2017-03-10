@@ -7,8 +7,9 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import tr.com.iyzico.IyzicoticketApplication;
-import tr.com.iyzico.repo.model.Event;
+import tr.com.iyzico.repo.entity.Event;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,10 +30,16 @@ public class RepositoriesTests {
 	@Test
 	public void eventrepo_should_find_by_id() throws Exception {
 		String firstEventName = "Developers Day";
+		String firstEventDesc = "New technologies about software development";
+		String firstEventPlace = "Istanbul Convention Center";
+		String firstEventDate = "2017-05-12";
 
 		Event event = eventRepo.findOne(1);
 
 		assertEquals(firstEventName, event.getName());
+		assertEquals(firstEventDesc, event.getDescription());
+		assertEquals(firstEventPlace, event.getPlace());
+		assertEquals(firstEventDate, new SimpleDateFormat("yyyy-MM-dd").format(event.getDate()));
 	}
 
 	@Test

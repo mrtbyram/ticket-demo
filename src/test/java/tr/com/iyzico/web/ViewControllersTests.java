@@ -4,6 +4,7 @@ import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ActiveProfiles;
@@ -17,6 +18,7 @@ import tr.com.iyzico.IyzicoticketApplication;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @WebAppConfiguration
@@ -56,4 +58,17 @@ public class ViewControllersTests {
 				.andExpect(status().isOk())
 				.andExpect(view().name("event-detail"));
 	}
+
+	@Test
+	public void event_should_return_noevent() throws Exception {
+		mockMvc.perform(get("/event/999"))
+				.andExpect(status().isOk())
+				.andExpect(view().name("no-event"));
+
+		mockMvc.perform(get("/event/ASD"))
+				.andExpect(status().isOk())
+				.andExpect(view().name("no-event"));
+
+	}
+
 }

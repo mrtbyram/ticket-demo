@@ -2,7 +2,7 @@ package tr.com.iyzico.repo;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import tr.com.iyzico.repo.model.Event;
+import tr.com.iyzico.repo.entity.Event;
 
 import java.util.List;
 
@@ -12,5 +12,6 @@ import java.util.List;
 @Repository
 public interface EventRepository extends CrudRepository<Event, Integer>{
 
+    @Override
     List<Event> findAll();
 }

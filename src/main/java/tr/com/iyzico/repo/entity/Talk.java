@@ -1,4 +1,4 @@
-package tr.com.iyzico.repo.model;
+package tr.com.iyzico.repo.entity;
 
 import javax.persistence.*;
 
@@ -30,32 +30,16 @@ public class Talk {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public Integer getEventId() {
         return eventId;
-    }
-
-    public void setEventId(Integer eventId) {
-        this.eventId = eventId;
     }
 
     public String getSpeaker() {
         return speaker;
     }
 
-    public void setSpeaker(String speaker) {
-        this.speaker = speaker;
-    }
-
     public String getSubject() {
         return subject;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
     }
 
     public String getImage() {

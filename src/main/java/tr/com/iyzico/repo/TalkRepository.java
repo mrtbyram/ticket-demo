@@ -2,7 +2,7 @@ package tr.com.iyzico.repo;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import tr.com.iyzico.repo.model.Talk;
+import tr.com.iyzico.repo.entity.Talk;
 
 import java.util.List;
 

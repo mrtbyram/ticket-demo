@@ -5,7 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import tr.com.iyzico.repo.EventRepository;
-import tr.com.iyzico.repo.model.Event;
+import tr.com.iyzico.repo.entity.Event;
 
 import java.util.List;
 
@@ -13,7 +13,7 @@ import java.util.List;
  * Created by muratbayram on 04/03/2017.
  */
 @Controller
-public class IndexController {
+public class IndexController extends IyziController {
 
     @Autowired
     EventRepository eventRepo;

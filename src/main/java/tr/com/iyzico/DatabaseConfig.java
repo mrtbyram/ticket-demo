@@ -52,7 +52,7 @@ public class DatabaseConfig {
                 new LocalContainerEntityManagerFactoryBean();
         emfb.setDataSource(dataSource);
         emfb.setJpaVendorAdapter(jpaVendorAdapter);
-        emfb.setPackagesToScan("tr.com.iyzico.repo.model");
+        emfb.setPackagesToScan("tr.com.iyzico.repo.entity");
         return emfb;
     }
 
