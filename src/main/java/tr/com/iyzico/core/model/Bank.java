@@ -19,20 +19,13 @@ public enum Bank {
     }
 
     public boolean isSuitableForCard(CardType type){
-        return this.cardType.compareTo(type) == 0;
+        return this.cardType.equals(type);
     }
 
     public static Bank getBank(Long bankCode){
-        if(bankCode == null){
-            return null;
-        }
-
         for (Bank bank : Bank.values()){
-            if(bank.bankCode.compareTo(bankCode) == 0){
-                return bank;
-            }
+            if(bank.bankCode.equals(bankCode)) return bank;
         }
-
         return null;
     }
 }
