@@ -5,7 +5,7 @@ package tr.com.iyzico.core.model;
  */
 public class Card {
 
-    private long bankCode;
+    private Long bankCode;
     private String cardType;
 
 
@@ -17,11 +17,11 @@ public class Card {
         this.cardType = cardType;
     }
 
-    public void setBankCode(long bankCode) {
+    public void setBankCode(Long bankCode) {
         this.bankCode = bankCode;
     }
 
-    public long getBankCode() {
+    public Long getBankCode() {
         return bankCode;
     }
 }

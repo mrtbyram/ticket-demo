@@ -26,7 +26,7 @@ public class IyziPayServiceTests {
     public void should_retrieve_bin_number(){
         Card card = paymentService.retrieveCardProperties("589004");
 
-        assertEquals(46L, card.getBankCode());
+        assertEquals(new Long(46), card.getBankCode());
         assertEquals("DEBIT_CARD", card.getCardType());
     }
 }
