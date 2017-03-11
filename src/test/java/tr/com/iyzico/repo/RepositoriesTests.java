@@ -60,14 +60,26 @@ public class RepositoriesTests {
 
 	@Test
 	public void talkrepo_should_find_by_event_id(){
-		String talkOne = "SpringBoot";
-		String talkTwo = "Git Repository";
+		String subjectOne = "SpringBoot";
+		String subjectTwo = "Git Repository";
 
-		List<String> talks = new ArrayList<>();
-		talkRepo.findTalkByEventId(1).forEach(talk -> talks.add(talk.getSubject()));
+		String speakerOne = "Murat Bayram";
+		String speakerTwo = "Onur Yardimci";
 
-		assertTrue(talks.contains(talkOne));
-		assertTrue(talks.contains(talkTwo));
+		List<String> subjects = new ArrayList<>();
+		List<String> speakers = new ArrayList<>();
+
+		talkRepo.findTalkByEventId(1)
+				.forEach(talk -> {
+					subjects.add(talk.getSubject());
+					speakers.add(talk.getSpeaker());
+				});
+
+		assertTrue(subjects.contains(subjectOne));
+		assertTrue(subjects.contains(subjectTwo));
+
+		assertTrue(speakers.contains(speakerOne));
+		assertTrue(speakers.contains(speakerTwo));
 	}
 
 }

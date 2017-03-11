@@ -1,5 +1,7 @@
 package tr.com.iyzico.core.model;
 
+import tr.com.iyzico.core.exceptions.NoBankException;
+
 /**
  * Created by muratbayram on 10/03/2017.
  */
@@ -22,10 +24,10 @@ public enum Bank {
         return this.cardType.equals(type);
     }
 
-    public static Bank getBank(Long bankCode){
+    public static Bank getBank(Long bankCode) throws NoBankException {
         for (Bank bank : Bank.values()){
             if(bank.bankCode.equals(bankCode)) return bank;
         }
-        return null;
+        throw new NoBankException();
     }
 }

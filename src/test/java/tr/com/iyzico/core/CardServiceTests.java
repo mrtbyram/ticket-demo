@@ -24,14 +24,14 @@ public class CardServiceTests {
 
     @Test
     public void should_determine_card_is_suitable(){
-        assertFalse(cardService.isSuitableForPayment("5890004")); //AKBANK DEBIT
-        assertFalse(cardService.isSuitableForPayment("123456")); //INCORRECT CARD
-        assertFalse(cardService.isSuitableForPayment("552879")); //HALK CREDIT
-        assertFalse(cardService.isSuitableForPayment("550472")); //HSBC CREDIT
-        assertFalse(cardService.isSuitableForPayment("")); //EMPTY BIN
-        assertFalse(cardService.isSuitableForPayment(null)); //NULL BIN
+        assertFalse(cardService.checkForPayment("5890004")); //AKBANK DEBIT
+        assertFalse(cardService.checkForPayment("123456")); //INCORRECT CARD
+        assertFalse(cardService.checkForPayment("552879")); //HALK CREDIT
+        assertFalse(cardService.checkForPayment("550472")); //HSBC CREDIT
+        assertFalse(cardService.checkForPayment("")); //EMPTY BIN
+        assertFalse(cardService.checkForPayment(null)); //NULL BIN
 
-        assertTrue(cardService.isSuitableForPayment("552608")); //AKBANK CREDIT
-        assertTrue(cardService.isSuitableForPayment("447505")); //HALK DEBIT
+        assertTrue(cardService.checkForPayment("552608")); //AKBANK CREDIT
+        assertTrue(cardService.checkForPayment("447505")); //HALK DEBIT
     }
 }
