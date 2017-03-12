@@ -13,18 +13,37 @@ import java.util.List;
  */
 public class TicketFinder {
 
-    private List<Ticket> tickets = new ArrayList<>();
+    private List<Ticket> tickets;
 
     public TicketFinder(List<Ticket> tickets) {
         this.tickets = tickets;
     }
 
     public TicketFinder() {
+        tickets = new ArrayList<>();
         tickets.add(new Ticket(
                 "Blind Bird",
-                BigDecimal.valueOf(100),
-                LocalDate.of(2016, 10, 12),
-                LocalDate.of(2016, 12, 12)));
+                BigDecimal.valueOf(250),
+                LocalDate.of(2017, 12, 1),
+                LocalDate.of(2018, 1, 15)));
+
+        tickets.add(new Ticket(
+                "Early Bird",
+                BigDecimal.valueOf(500),
+                LocalDate.of(2018, 1, 16),
+                LocalDate.of(2018, 2, 28)));
+
+        tickets.add(new Ticket(
+                "Regular",
+                BigDecimal.valueOf(750),
+                LocalDate.of(2018, 3, 1),
+                LocalDate.of(2018, 4, 30)));
+
+        tickets.add(new Ticket(
+                "Laggard",
+                BigDecimal.valueOf(1000),
+                LocalDate.of(2018, 5, 1),
+                LocalDate.of(2018, 5, 27)));
     }
 
     public boolean hasTicket() {
