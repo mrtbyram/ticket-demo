@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>IyzicoTicket</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+<div th:replace="../fragments/header :: header">&nbsp;</div>
+<br/><br/><br/><br/>
+<div class="container">
+    <h1 class="display-3">Events</h1>
+    <br/>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td>Name</td>
+            <td>Description</td>
+            <td>Place</td>
+            <td>Date</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:if="${events.empty}">
+            <td colspan="4">No Events</td>
+        </tr>
+        <tr th:each="event : ${events}">
+            <td th:text="${event.name}"/>
+            <td th:text="${event.description}"/>
+            <td th:text="${event.place}"/>
+            <td th:text="${#dates.format(event.date, 'dd/MM/yyyy')}"/>
+            <td><a class="btn btn-primary btn-sm" role="button" href="#" th:href="@{'/event/' + ${event.id}}">Details</a></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

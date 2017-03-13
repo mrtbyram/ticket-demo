@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>IyzicoTicket</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+<div th:replace="../fragments/header :: header">&nbsp;</div>
+<div class="jumbotron">
+    <div class="container">
+        <h1 class="display-3" th:text="${event.name}"/>
+        <p th:text="${event.description}"/>
+        <div class="row">
+            <div class="col-md-9">
+                <h3 th:text="${event.place}"/>
+                <h4 th:text="${#dates.format(event.date, 'dd/MM/yyyy')}"/>
+            </div>
+            <div class="col-md-3">
+                <a class="btn btn-success btn-lg" role="button" href="#" th:href="@{'/event/' + ${event.id}}">Register</a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div th:each="talk : ${talks}" class="col-sm-6 col-md-3">
+            <img th:src="${talk.image}" class="img-circle" height="200" width="200"/>
+            <div class="caption">
+                <h3 th:text="${talk.speaker}"/>
+                <p th:text="${talk.subject}"/>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
