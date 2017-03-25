@@ -1,4 +1,4 @@
-package tr.com.iyzico.core;
+package tr.com.iyzico.core.service;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

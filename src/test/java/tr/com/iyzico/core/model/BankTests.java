@@ -1,4 +1,4 @@
-package tr.com.iyzico.core;
+package tr.com.iyzico.core.model;
 
 import static org.junit.Assert.*;
 import org.junit.Test;

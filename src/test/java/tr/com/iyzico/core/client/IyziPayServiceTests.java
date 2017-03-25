@@ -1,4 +1,4 @@
-package tr.com.iyzico.core;
+package tr.com.iyzico.core.client;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
