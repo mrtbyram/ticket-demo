@@ -1,5 +1,7 @@
 package tr.com.iyzico.core.service;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tr.com.iyzico.core.client.api.PaymentService;
@@ -8,7 +10,6 @@ import tr.com.iyzico.core.model.Bank;
 import tr.com.iyzico.core.model.Card;
 import tr.com.iyzico.core.model.CardType;
 
-import java.util.logging.Logger;
 
 /**
  * Created by muratbayram on 10/03/2017.
@@ -16,7 +17,7 @@ import java.util.logging.Logger;
 @Service
 public class CardService {
 
-    private Logger logger = Logger.getLogger(CardService.class.getName());
+    private Logger logger = LoggerFactory.getLogger(CardService.class);
 
     private PaymentService paymentService;
 
@@ -38,7 +39,7 @@ public class CardService {
 
             return bank.isSuitableForCard(cardType);
         }catch (NoBankException nbex){
-            logger.warning("Couldnt found a bank for " + card.getBankCode());
+            logger.warn("Couldnt found a bank for " + card.getBankCode());
             return false;
         }
     }

@@ -1,22 +1,22 @@
 package tr.com.iyzico.web;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * Created by muratbayram on 09/03/2017.
  */
 public abstract class IyziController {
 
-    private final Logger logger = Logger.getLogger(this.getClass().getName());
+    private final Logger logger = LoggerFactory.getLogger(IyziController.class);
 
     @ExceptionHandler(Exception.class)
     public ModelAndView errorPage(HttpServletRequest req, Exception ex) {
-        logger.log(Level.SEVERE, "Request: " + req.getRequestURL() + " raised " + ex, ex);
+        logger.error("Request: " + req.getRequestURL() + " raised " + ex, ex);
 
         ModelAndView mav = new ModelAndView();
         mav.setViewName("error");
