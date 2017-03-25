@@ -24,7 +24,7 @@ public enum Bank {
         return this.cardType.equals(type);
     }
 
-    public static Bank getBank(Long bankCode) throws NoBankException {
+    public static Bank getBank(Long bankCode) {
         for (Bank bank : Bank.values()){
             if(bank.bankCode.equals(bankCode)) return bank;
         }
