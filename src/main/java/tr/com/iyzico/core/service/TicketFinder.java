@@ -1,6 +1,8 @@
 package tr.com.iyzico.core.service;
 
 import org.apache.tomcat.jni.Local;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Service;
 import tr.com.iyzico.core.model.Ticket;
 
 import java.math.BigDecimal;
@@ -11,13 +13,11 @@ import java.util.List;
 /**
  * Created by muratbayram on 12/03/2017.
  */
+@Service
+@Scope("singleton")
 public class TicketFinder {
 
     private List<Ticket> tickets;
-
-    public TicketFinder(List<Ticket> tickets) {
-        this.tickets = tickets;
-    }
 
     public TicketFinder() {
         tickets = new ArrayList<>();
@@ -44,6 +44,10 @@ public class TicketFinder {
                 BigDecimal.valueOf(1000),
                 LocalDate.of(2018, 5, 1),
                 LocalDate.of(2018, 5, 27)));
+    }
+
+    public TicketFinder(List<Ticket> tickets) {
+        this.tickets = tickets;
     }
 
     public boolean hasTicket() {

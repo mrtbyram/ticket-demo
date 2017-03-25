@@ -15,8 +15,12 @@ import java.util.List;
 @Controller
 public class IndexController extends IyziController {
 
-    @Autowired
     EventRepository eventRepo;
+
+    @Autowired
+    public IndexController(EventRepository eventRepo) {
+        this.eventRepo = eventRepo;
+    }
 
     @RequestMapping("/")
     public String index(Model model){

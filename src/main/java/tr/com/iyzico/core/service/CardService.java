@@ -18,8 +18,12 @@ public class CardService {
 
     private Logger logger = Logger.getLogger(CardService.class.getName());
 
-    @Autowired
     private PaymentService paymentService;
+
+    @Autowired
+    public CardService(PaymentService paymentService) {
+        this.paymentService = paymentService;
+    }
 
     public boolean checkForPayment(String binNumber){
         Card card = paymentService.retrieveCardProperties(binNumber);

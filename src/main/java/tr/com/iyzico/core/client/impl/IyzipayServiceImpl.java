@@ -15,8 +15,12 @@ import tr.com.iyzico.core.client.api.PaymentService;
 @Service
 public class IyzipayServiceImpl implements PaymentService {
 
-    @Autowired
     private ApplicationParams params;
+
+    @Autowired
+    public IyzipayServiceImpl(ApplicationParams params) {
+        this.params = params;
+    }
 
     @Override
     public Card retrieveCardProperties(String binNumber) {

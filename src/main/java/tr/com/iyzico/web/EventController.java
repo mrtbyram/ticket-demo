@@ -15,11 +15,15 @@ import tr.com.iyzico.repo.entity.Event;
 @Controller
 public class EventController extends IyziController {
 
-    @Autowired
-    EventRepository eventRepo;
+    private EventRepository eventRepo;
+
+    private TalkRepository talkRepo;
 
     @Autowired
-    TalkRepository talkRepo;
+    public EventController(EventRepository eventRepo, TalkRepository talkRepo) {
+        this.eventRepo = eventRepo;
+        this.talkRepo = talkRepo;
+    }
 
     @RequestMapping("/event/{ref}")
     public String eventDetail(@PathVariable String ref, Model model){
