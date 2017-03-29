@@ -4,6 +4,8 @@ import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 import tr.com.iyzico.core.model.Promotion;
 
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -30,5 +32,15 @@ public class PromotionFinder {
 
     public Promotion findPromotionByCode(String code){
         return promotionMap.get(code);
+    }
+
+    public Promotion findPromotionByCodeForToday(String code) {
+        String today = LocalDate.now().format(DateTimeFormatter.ofPattern("ddMM"));
+
+        Promotion p = findPromotionByCode(code);
+        if(p != null && p.getDates().contains(today)){
+            return p;
+        }
+        return null;
     }
 }

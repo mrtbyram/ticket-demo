@@ -17,4 +17,15 @@ public class Promotion {
         this.discountPercentage = discountPercentage;
     }
 
+    public String getCode() {
+        return code;
+    }
+
+    public List<String> getDates() {
+        return dates;
+    }
+
+    public int getDiscountPercentage() {
+        return discountPercentage;
+    }
 }

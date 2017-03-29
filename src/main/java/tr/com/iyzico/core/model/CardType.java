@@ -13,9 +13,9 @@ public enum CardType {
         this.typeName = typeName;
     }
 
-    public static CardType getCardType(String cardType) {
+    public static CardType getCardType(String typeName) {
         for (CardType type : CardType.values()){
-            if(type.typeName.equals(cardType)) return type;
+            if(type.typeName.equals(typeName)) return type;
         }
         return null;
     }
