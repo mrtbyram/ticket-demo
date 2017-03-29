@@ -17,7 +17,7 @@ import static org.junit.Assert.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 @Import(IyzicoticketApplication.class)
 @ActiveProfiles("test")
-public class IyziPayServiceTests {
+public class IyziPayServiceTest {
 
     @Autowired
     private PaymentService paymentService;

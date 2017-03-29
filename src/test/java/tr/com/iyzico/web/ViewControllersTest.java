@@ -24,7 +24,7 @@ import static org.junit.Assert.*;
 @WebAppConfiguration
 @ContextConfiguration(classes = IyzicoticketApplication.class)
 @ActiveProfiles("test")
-public class ViewControllersTests {
+public class ViewControllersTest {
 
 	@Autowired
 	private WebApplicationContext wac;

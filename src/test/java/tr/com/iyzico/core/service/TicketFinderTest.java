@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 /**
  * Created by muratbayram on 12/03/2017.
  */
-public class TicketFinderTests {
+public class TicketFinderTest {
 
     @Test
     public void should_have_tickets(){

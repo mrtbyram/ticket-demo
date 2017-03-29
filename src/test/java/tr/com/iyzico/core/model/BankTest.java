@@ -8,7 +8,7 @@ import tr.com.iyzico.core.model.CardType;
 /**
  * Created by muratbayram on 11/03/2017.
  */
-public class BankTests {
+public class BankTest {
 
     @Test
     public void should_determine_card_type_is_suitable(){

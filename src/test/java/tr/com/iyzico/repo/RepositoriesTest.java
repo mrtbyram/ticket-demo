@@ -19,7 +19,7 @@ import static org.junit.Assert.assertTrue;
 @RunWith(SpringJUnit4ClassRunner.class)
 @Import(IyzicoticketApplication.class)
 @ActiveProfiles("test")
-public class RepositoriesTests {
+public class RepositoriesTest {
 
 	@Autowired
 	EventRepository eventRepo;
