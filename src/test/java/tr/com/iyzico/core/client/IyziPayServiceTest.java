@@ -9,7 +9,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import tr.com.iyzico.IyzicoticketApplication;
 import tr.com.iyzico.core.model.Card;
 import tr.com.iyzico.core.client.api.PaymentService;
-import tr.com.iyzico.core.model.CardType;
 
 import static org.junit.Assert.*;
 /**
@@ -28,6 +27,6 @@ public class IyziPayServiceTest {
         Card card = paymentService.retrieveCardProperties("589004");
 
         assertEquals(new Long(46), card.getBankCode());
-        assertEquals(CardType.DEBIT_CARD, card.getCardType());
+        assertEquals("DEBIT_CARD", card.getCardType());
     }
 }

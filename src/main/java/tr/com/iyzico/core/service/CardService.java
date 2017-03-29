@@ -34,8 +34,9 @@ public class CardService {
     private boolean isCardSuitableForPayment(Card card){
         try{
             Bank bank = Bank.getBank(card.getBankCode());
+            CardType cardType = CardType.getCardType(card.getCardType());
 
-            return bank.isSuitableForCard(card.getCardType());
+            return bank.isSuitableForCard(cardType);
         }catch (NoBankException nbex){
             logger.warning("Couldnt found a bank for " + card.getBankCode());
             return false;
