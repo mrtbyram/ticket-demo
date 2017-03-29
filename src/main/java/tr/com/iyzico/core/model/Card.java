@@ -6,15 +6,19 @@ package tr.com.iyzico.core.model;
 public class Card {
 
     private Long bankCode;
-    private String cardType;
+    private CardType cardType;
 
 
-    public String getCardType() {
+    public CardType getCardType() {
         return cardType;
     }
 
-    public void setCardType(String cardType) {
+    public void setCardType(CardType cardType) {
         this.cardType = cardType;
+    }
+
+    public void setCardType(String cardType) {
+        this.cardType = CardType.getCardType(cardType);
     }
 
     public void setBankCode(Long bankCode) {
