@@ -22,10 +22,10 @@ import static org.junit.Assert.assertTrue;
 public class RepositoriesTest {
 
 	@Autowired
-	EventRepository eventRepo;
+	private EventRepository eventRepo;
 
 	@Autowired
-	TalkRepository talkRepo;
+	private TalkRepository talkRepo;
 
 	@Test
 	public void eventrepo_should_find_by_id() throws Exception {

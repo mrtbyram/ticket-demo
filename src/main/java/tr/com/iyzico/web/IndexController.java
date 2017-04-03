@@ -15,7 +15,7 @@ import java.util.List;
 @Controller
 public class IndexController extends IyziController {
 
-    EventRepository eventRepo;
+    private EventRepository eventRepo;
 
     @Autowired
     public IndexController(EventRepository eventRepo) {

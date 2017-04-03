@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import tr.com.iyzico.core.client.api.PaymentService;
 import tr.com.iyzico.core.exceptions.NoBankException;
 import tr.com.iyzico.core.model.Bank;
-import tr.com.iyzico.core.model.Card;
+import tr.com.iyzico.core.model.BinCard;
 import tr.com.iyzico.core.model.CardType;
 
 import java.util.logging.Logger;
@@ -26,19 +26,19 @@ public class CardService {
     }
 
     public boolean checkForPayment(String binNumber){
-        Card card = paymentService.retrieveCardProperties(binNumber);
+        BinCard binCard = paymentService.retrieveCardProperties(binNumber);
 
-        return isCardSuitableForPayment(card);
+        return isCardSuitableForPayment(binCard);
     }
 
-    private boolean isCardSuitableForPayment(Card card){
+    private boolean isCardSuitableForPayment(BinCard binCard){
         try{
-            Bank bank = Bank.getBank(card.getBankCode());
-            CardType cardType = CardType.getCardType(card.getCardType());
+            Bank bank = Bank.getBank(binCard.getBankCode());
+            CardType cardType = CardType.getCardType(binCard.getCardType());
 
             return bank.isSuitableForCard(cardType);
         }catch (NoBankException nbex){
-            logger.warning("Couldnt found a bank for " + card.getBankCode());
+            logger.warning("Couldnt found a bank for " + binCard.getBankCode());
             return false;
         }
     }

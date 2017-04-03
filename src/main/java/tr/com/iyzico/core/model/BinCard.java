@@ -1,9 +1,11 @@
 package tr.com.iyzico.core.model;
 
 /**
- * Created by muratbayram on 10/03/2017.
+ *
+ *
+ * @author muratbayram
  */
-public class Card {
+public class BinCard {
 
     private Long bankCode;
     private String cardType;
