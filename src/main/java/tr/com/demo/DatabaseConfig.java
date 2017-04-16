@@ -17,14 +17,14 @@ import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 
 /**
- * Created by muratbayram on 07/03/2017.
+ * @author muratbayram
  */
 @Configuration
 @EnableTransactionManagement
+@Profile("test")
 public class DatabaseConfig {
 
     @Bean
-    @Profile("test")
     public DataSource dataSource(){
         return new EmbeddedDatabaseBuilder()
                 .setType(EmbeddedDatabaseType.HSQL)
