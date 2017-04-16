@@ -4,8 +4,10 @@ import org.hamcrest.Matchers;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.BDDMockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
@@ -14,7 +16,12 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 import tr.com.demo.TicketApplication;
+import tr.com.demo.repo.EventRepository;
+import tr.com.demo.repo.entity.Event;
 
+import java.util.ArrayList;
+
+import static org.mockito.BDDMockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
@@ -28,6 +35,9 @@ public class ViewControllersTest {
 	private WebApplicationContext wac;
 
 	private MockMvc mockMvc;
+
+//	@MockBean
+//	private EventRepository eventRepo;
 
 	@Before
 	public void setup() {
@@ -44,6 +54,7 @@ public class ViewControllersTest {
 
 	@Test
 	public void events_should_return_events() throws Exception {
+//		given(eventRepo.findAll()).willReturn(new ArrayList<Event>());
 		mockMvc.perform(get("/events"))
 				.andExpect(status().isOk())
 				.andExpect(view().name("events"))
