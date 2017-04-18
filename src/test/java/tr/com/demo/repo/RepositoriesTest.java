@@ -3,9 +3,14 @@ package tr.com.demo.repo;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import tr.com.demo.ApplicationTestConfig;
+import tr.com.demo.DatabaseConfig;
 import tr.com.demo.TicketApplication;
 import tr.com.demo.repo.entity.Event;
 
@@ -17,7 +22,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@Import(TicketApplication.class)
+@Import({ApplicationTestConfig.class, DatabaseConfig.class})
 @ActiveProfiles("test")
 public class RepositoriesTest {
 

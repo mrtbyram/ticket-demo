@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import tr.com.demo.ApplicationTestConfig;
 import tr.com.demo.TicketApplication;
 
 import static org.junit.Assert.*;
@@ -14,7 +15,7 @@ import static org.junit.Assert.*;
  * Created by muratbayram on 11/03/2017.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@Import(TicketApplication.class)
+@Import(ApplicationTestConfig.class)
 @ActiveProfiles("test")
 public class BinCardServiceTest {
 
